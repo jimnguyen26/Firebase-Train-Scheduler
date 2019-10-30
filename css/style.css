@@ -3,10 +3,38 @@
 }
 
 .headerContainer {
-    background-color: lightgreen;
+    background-color: #854D27;
+    color: whitesmoke;
     height: 175px;
     text-align: center;
     padding-top: 45px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 }
+
+.scheduleContainer {
+    background-color: lightgrey;
+    height: 300px;
+}
+
+#scheduleText {
+    background-color: #004FFF;
+    color: whitesmoke;
+    padding-left: 40px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
