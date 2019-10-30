@@ -41,8 +41,24 @@
         </tr> 
     </table>
 </div>
-
-    
+<br>
+<div class="trainContainer">
+    <div class="row">
+        <div class="col-sm-12">
+                <p id="trainText">Add Train</p>
+        </div>
+    </div>
+    <p class="trainText">Train Name</p>
+    <input type="text" class="form-control" id="trainNameInput">
+    <p class="trainText">Destination</p>
+    <input type="text" class="form-control" id="destinationInput">
+    <p class="trainText">First Train Time (HH:MM - military time)</p>
+    <input type="text" class="form-control" id="timeInput">
+    <p class="trainText">Frequency (min)</p>
+    <input type="text" class="form-control" id="frequencyInput">
+    <br>
+    <input class="btn btn-primary" type="submit" id="submitBtn" value="Submit">
+</div>    
     
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
@@ -50,9 +66,9 @@
 <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>    
 <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src="./app.js"></script>
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="./app.js"></script>
 </body>
 </html>
