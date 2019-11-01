@@ -24,7 +24,7 @@
             <p id="scheduleText">Current Train Schedule</p>
         </div>
     </div>
-    <table>
+    <table id="trainScheduleTable">
         <tr>
             <th>Train Name</th>
             <th>Destination</th>
@@ -32,16 +32,23 @@
             <th>Next Arrival</th>
             <th>Minutes Away</th>
         </tr>
+    <!-- <thead> -->
         <tr>
-            <td class="trainName">Amtrak</td>
+            <td class="trainName"></td>
             <td class="destination">Los Angeles</td>
             <td class="frequency">60</td>
             <td class="nextArrival">24</td>
             <td class="minutesAway">45</td>
-        </tr> 
+        </tr>
+    <!-- </thead>  -->
     </table>
+    <tBody>
+    <div class="appendingText"></div>
+    </tBody>
 </div>
+
 <br>
+
 <div class="trainContainer">
     <div class="row">
         <div class="col-sm-12">
@@ -52,15 +59,14 @@
     <input type="text" class="form-control" id="trainNameInput">
     <p class="trainText">Destination</p>
     <input type="text" class="form-control" id="destinationInput">
-    <p class="trainText">First Train Time (HH:MM - military time)</p>
+    <p class="trainText">First Train Time (HH:mm - military time)</p>
     <input type="text" class="form-control" id="timeInput">
     <p class="trainText">Frequency (min)</p>
     <input type="text" class="form-control" id="frequencyInput">
     <br>
     <input class="btn btn-primary" type="submit" id="submitBtn" value="Submit">
 </div>    
-    
-    
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
