@@ -18,10 +18,14 @@ const db = firebase.database();
 $('#submitBtn').on('click', function() {
     const trainName = $('#trainNameInput').val().trim();
     const destination = $('#destinationInput').val().trim();
+    const firstTrain = moment($('#timeInput').val().trim(), "HH:mm").format("HH:mm");
+    const frequency = $('#frequencyInput').val().trim();
 
-    var newTrain = {
+    let newTrain = {
         name: trainName,
         place: destination,
+        ftrain: firstTrain,
+        freq: frequency
     }
 
     db.ref().push(newTrain);
@@ -29,17 +33,38 @@ $('#submitBtn').on('click', function() {
     
     $('#trainNameInput').val('');
     $('#destinationInput').val('');
+    $('#timeInput').val('');
+    $('#frequencyInput').val('');
 
     return false;
-
 });
 
 db.ref().on('child_added', function(snap) {
     console.log(snap.val());
-    var trainName = snap.val().name;
-    var destination = snap.val().place;
+    let trainName = snap.val().name;
+    let destination = snap.val().place;
+    let firstTrain = snap.val().ftrain;
+    let frequency = snap.val().freq;
 
-    $('#trainScheduleTable').append("<tr><td>" + trainName);
+    let timeConverted = moment(firstTrain, "HH:mm");
+    console.log(timeConverted);
+
+    let currentTime = moment().format("HH:mm");
+    console.log("Current Time: " + currentTime);
+
+    let timeDiff = moment().diff(moment(timeConverted), "minutes");
+    console.log(firstTrain);
+    console.log("Difference in Time: " + timeDiff);
+
+    let timeRemainder = timeDiff % frequency;
+    console.log(timeRemainder);
+
+    let minTrain = frequency - timeRemainder;
+
+    let nextTrain = moment().add(minTrain, "minutes").format("HH:mm");
+
+    $('#trainScheduleTable').append("<tr><td>" + trainName + "</td><td>" + destination + 
+    "</td><td>" + nextTrain);
 });
 
 });
