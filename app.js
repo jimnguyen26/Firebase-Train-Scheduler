@@ -29,7 +29,7 @@ $('#submitBtn').on('click', function() {
     }
 
     db.ref().push(newTrain);
-    console.log(newTrain.name);
+    // console.log(newTrain.name);
     
     $('#trainNameInput').val('');
     $('#destinationInput').val('');
@@ -41,6 +41,7 @@ $('#submitBtn').on('click', function() {
 
 db.ref().on('child_added', function(snap) {
     console.log(snap.val());
+    
     let trainName = snap.val().name;
     let destination = snap.val().place;
     let firstTrain = snap.val().ftrain;
@@ -64,7 +65,7 @@ db.ref().on('child_added', function(snap) {
     let nextTrain = moment().add(minTrain, "minutes").format("HH:mm");
 
     $('#trainScheduleTable').append("<tr><td>" + trainName + "</td><td>" + destination + 
-    "</td><td>" + nextTrain);
+    "</td><td>" + frequency + "</td><td>" + nextTrain + "</td><td>" + minTrain + "</td><td>");
 });
 
 });
