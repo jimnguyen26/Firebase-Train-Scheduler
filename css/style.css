@@ -3,18 +3,22 @@
 }
 
 .headerContainer {
-    background-color: #854D27;
+    background-color: #696969;
+    width: 98%;
+    margin-left: 1%;
     color: whitesmoke;
     height: 125px;
     text-align: center;
     padding-top: 20px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-radius: 4px;
+    /* border-bottom-left-radius: 4px; */
 }
 
 .scheduleContainer {
-    background-color: tan;;
-    height: 450px;
+    background-color: #C0C0C0;
+    height: 350px;
+    width: 98%;
+    margin-left: 1%;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     overflow: scroll;
@@ -22,7 +26,7 @@
 
 #scheduleText,
 #trainText {
-    background-color: #004FFF;
+    background-color: #4682B4;
     color: whitesmoke;
     padding-left: 40px;
     border-top-left-radius: 4px;
@@ -30,8 +34,10 @@
 }
 
 .trainContainer {
-    background-color: tan;;
+    background-color: #C0C0C0;
     height: 430px;
+    width: 98%;
+    margin-left: 1%;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     }
